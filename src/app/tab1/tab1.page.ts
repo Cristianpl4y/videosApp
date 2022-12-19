@@ -1,4 +1,4 @@
-import { IListaFilmes } from './../models/IFilmeAPI.model';
+import { IListaFilmes, IFilmeApi } from './../models/IFilmeAPI.model';
 import { FilmeService } from './../services/filme.service';
 import { DadosService } from './../services/dados.service';
 import { Component } from '@angular/core';
@@ -16,37 +16,37 @@ export class Tab1Page {
 
   titulo: string = 'Filmes'
 
-  listaFilmes: IFilme[] = [
-    {
-      nome: 'Avatar: O Caminho da Água (2022)',
-      lancamento : '15/12/2022 (BR)',
-      duracao: '3h 12m',
-      classificacao: 85,
-      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnmdUnztAYbfJ0jhjpN6oxwP2sb.jpg',
-      generos: ['Ficção científica', 'Ação', 'Aventura'],
-      pagina: '/avatar'
-    },
-    {
-      nome: 'Pantera Negra: Wakanda para Sempre (2022)',
-      lancamento : '10/11/2022 (BR)',
-      duracao: '2h 42m',
-      classificacao: 75,
-      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6tb0qiqLN9szHPA4i0kY38oaWew.jpg',
-      generos: ['Ação', 'Aventura', 'Ficção científica'],
-      pagina: '/pantera-negra'
-    },
-    {
-      nome: 'O Troll da Montanha (2022)',
-      lancamento : '01/12/2022 (BR)',
-      duracao: '1h 43m',
-      classificacao: 68,
-      cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9z4jRr43JdtU66P0iy8h18OyLql.jpg',
-      generos: ['Fantasia', 'Ação', 'Aventura'],
-      pagina: 'troll-da-montanha'
-    }
-  ]
+  // listaFilmes: IFilme[] = [
+  //   {
+  //     nome: 'Avatar: O Caminho da Água (2022)',
+  //     lancamento : '15/12/2022 (BR)',
+  //     duracao: '3h 12m',
+  //     classificacao: 85,
+  //     cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnmdUnztAYbfJ0jhjpN6oxwP2sb.jpg',
+  //     generos: ['Ficção científica', 'Ação', 'Aventura'],
+  //     pagina: '/avatar'
+  //   },
+  //   {
+  //     nome: 'Pantera Negra: Wakanda para Sempre (2022)',
+  //     lancamento : '10/11/2022 (BR)',
+  //     duracao: '2h 42m',
+  //     classificacao: 75,
+  //     cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6tb0qiqLN9szHPA4i0kY38oaWew.jpg',
+  //     generos: ['Ação', 'Aventura', 'Ficção científica'],
+  //     pagina: '/pantera-negra'
+  //   },
+  //   {
+  //     nome: 'O Troll da Montanha (2022)',
+  //     lancamento : '01/12/2022 (BR)',
+  //     duracao: '1h 43m',
+  //     classificacao: 68,
+  //     cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9z4jRr43JdtU66P0iy8h18OyLql.jpg',
+  //     generos: ['Fantasia', 'Ação', 'Aventura'],
+  //     pagina: 'troll-da-montanha'
+  //   }
+  // ]
 
-  listaF: any;
+  listaFilmes: IListaFilmes | any;
 
   constructor(
     private alertController: AlertController, 
@@ -63,13 +63,13 @@ export class Tab1Page {
     if(busca && busca.trim() !== ''){
       this.filmeService.buscarFilmes(busca).subscribe(dados => {
         console.log(dados);
-        this.listaF = dados
+        this.listaFilmes = dados
       }) 
     }
   }
 
 
-  exibirFilme(filme: IFilme){
+  exibirFilme(filme: IFilmeApi){
     this.dadosService.guardaDados('filme', filme)
     this.route.navigateByUrl('/dados-filme')
   }

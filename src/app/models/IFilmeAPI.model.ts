@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-export interface IFilmeAPI{
+export interface IFilmeApi{
     poster_path?: string;
     adult?: boolean;
     overview?: string;
@@ -18,7 +18,7 @@ export interface IFilmeAPI{
 
 export interface IListaFilmes {
     page: number;
-    results: IFilmeAPI[];
+    results: IFilmeApi[];
     total_results: number;
     total_pages: number;
 }
