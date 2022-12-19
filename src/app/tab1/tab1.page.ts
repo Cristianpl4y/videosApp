@@ -1,3 +1,5 @@
+import { IListaFilmes } from './../models/IFilmeAPI.model';
+import { FilmeService } from './../services/filme.service';
 import { DadosService } from './../services/dados.service';
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular'; // Alerta
@@ -12,7 +14,7 @@ import { Router } from '@angular/router';
 })
 export class Tab1Page {
 
-  titulo: string = 'Vídeos App'
+  titulo: string = 'Filmes'
 
   listaFilmes: IFilme[] = [
     {
@@ -44,12 +46,27 @@ export class Tab1Page {
     }
   ]
 
+  listaF: any;
+
   constructor(
     private alertController: AlertController, 
     private toastController: ToastController,
     public dadosService: DadosService,
+    public filmeService: FilmeService,
     public route: Router
   ) {}
+
+  buscarFilmes(evento: any){
+    console.log(evento.target.value)
+    const busca = evento.target.value
+    // subscribe() -> quando chegar alguma coisa do servidor quero fazer algo com essa resposta.
+    if(busca && busca.trim() !== ''){
+      this.filmeService.buscarFilmes(busca).subscribe(dados => {
+        console.log(dados);
+        this.listaF = dados
+      }) 
+    }
+  }
 
 
   exibirFilme(filme: IFilme){
