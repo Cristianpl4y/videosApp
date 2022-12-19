@@ -19,7 +19,8 @@ export class Tab1Page {
       duracao: '3h 12m',
       classificacao: 85,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tnmdUnztAYbfJ0jhjpN6oxwP2sb.jpg',
-      generos: ['Ficção científica', 'Ação', 'Aventura']
+      generos: ['Ficção científica', 'Ação', 'Aventura'],
+      pagina: '/avatar'
     },
     {
       nome: 'Pantera Negra: Wakanda para Sempre (2022)',
@@ -27,7 +28,8 @@ export class Tab1Page {
       duracao: '2h 42m',
       classificacao: 75,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/6tb0qiqLN9szHPA4i0kY38oaWew.jpg',
-      generos: ['Ação', 'Aventura', 'Ficção científica']
+      generos: ['Ação', 'Aventura', 'Ficção científica'],
+      pagina: '/pantera-negra'
     },
     {
       nome: 'O Troll da Montanha (2022)',
@@ -35,7 +37,8 @@ export class Tab1Page {
       duracao: '1h 43m',
       classificacao: 68,
       cartaz: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/9z4jRr43JdtU66P0iy8h18OyLql.jpg',
-      generos: ['Fantasia', 'Ação', 'Aventura']
+      generos: ['Fantasia', 'Ação', 'Aventura'],
+      pagina: 'troll-da-montanha'
     }
   ]
 
