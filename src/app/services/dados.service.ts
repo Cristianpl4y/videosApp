@@ -30,4 +30,6 @@ export class DadosService {
   deletarDados(index: string): boolean{
      return delete this.dados[index]
   }
+
+  
 }

@@ -1,7 +1,9 @@
+import { DadosService } from './../services/dados.service';
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular'; // Alerta
 import { ToastController } from '@ionic/angular'; // Um Toast é uma notificação sutil 
 import { IFilme } from '../models/IFilme.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -44,8 +46,17 @@ export class Tab1Page {
 
   constructor(
     private alertController: AlertController, 
-    private toastController: ToastController
+    private toastController: ToastController,
+    public dadosService: DadosService,
+    public route: Router
   ) {}
+
+
+  exibirFilme(filme: IFilme){
+    this.dadosService.guardaDados('filme', filme)
+    this.route.navigateByUrl('/dados-filme')
+  }
+
 
   async exibirAlertaFavorito() {
     const alert = await this.alertController.create({

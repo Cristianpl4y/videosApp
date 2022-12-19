@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'troll-da-montanha',
     loadChildren: () => import('./filmes/troll-da-montanha/troll-da-montanha.module').then( m => m.TrollDaMontanhaPageModule)
+  },
+  {
+    path: 'dados-filme',
+    loadChildren: () => import('./dados-filme/dados-filme.module').then( m => m.DadosFilmePageModule)
   }
 
 ];
