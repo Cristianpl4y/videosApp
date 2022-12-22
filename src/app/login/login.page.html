@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true"> 
+  <div class="center">
+    <ion-card>
+      <img src="assets/logo-videos-app.png" />
+      <ion-card-title class="ion-text-center">Bem-vindo</ion-card-title>
+      <p class="ion-text-center">Informe seus dados para prosseguir</p>
+
+      <ion-item lines="none">
+        <ion-label >Email:</ion-label>
+        <ion-input type="email" [(ngModel)]="email" placeholder="Digite seu email"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label >Senha:</ion-label>
+        <ion-input type="password"[(ngModel)]="senha" placeholder="Digite sua senha"></ion-input>
+      </ion-item>
+      <ion-button (click)="login()" expand="full" fill="outline">ENTRAR</ion-button>
+      <ion-button expand="full" fill="clear">REGISTRAR</ion-button>
+
+    </ion-card>
+  </div>
+</ion-content>

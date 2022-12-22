@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PanteraNegraPageRoutingModule } from './pantera-negra-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-import { PanteraNegraPage } from './pantera-negra.page';
+import { LoginPage } from './login.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PanteraNegraPageRoutingModule
+    LoginPageRoutingModule
   ],
-  declarations: [PanteraNegraPage]
+  declarations: [LoginPage]
 })
-export class PanteraNegraPageModule {}
+export class LoginPageModule {}
